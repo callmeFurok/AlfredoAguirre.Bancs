@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AA.Bancs.Domain.Interface\AA.Bancs.Domain.Interface.csproj" />
+    <ProjectReference Include="..\AA.Bancs.Infraestructure.Interface\AA.Bancs.Infraestructure.Interface.csproj" />
+  </ItemGroup>
+
+</Project>
