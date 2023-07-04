@@ -7,8 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AA.Bancs.Domain.Interface\WSDomain.Interface.csproj" />
-    <ProjectReference Include="..\AA.Bancs.Infraestructure.Interface\WSInfraestructure.Interface.csproj" />
+    <ProjectReference Include="..\WSDomain.Entity\WSDomain.Entity.csproj" />
   </ItemGroup>
 
 </Project>

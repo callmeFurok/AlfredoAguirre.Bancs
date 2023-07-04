@@ -12,8 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AA.Bancs.Application.Interface\WSApplication.Interface.csproj" />
-    <ProjectReference Include="..\AA.Bancs.Domain.Interface\WSDomain.Interface.csproj" />
+    <ProjectReference Include="..\WSApplication.Interface\WSApplication.Interface.csproj" />
+    <ProjectReference Include="..\WSDomain.Interface\WSDomain.Interface.csproj" />
   </ItemGroup>
 
 </Project>

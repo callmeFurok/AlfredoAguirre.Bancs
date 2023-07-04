@@ -8,10 +8,11 @@ namespace WSInfraestructure.Interface
 
         Task<bool> UpdateAsync(Transactions transactions);
 
-        Task<bool> DeleteAsync(string transactionId);
+        Task<bool> DeleteAsync(Guid transactionId);
 
-        Task<Transactions> GetTransactionsByIdAsync(string transactionId);
+        Task<Transactions> GetTransactionsByIdAsync(Guid transactionId);
 
         Task<IEnumerable<Transactions>> GetAllTransactionsAsync();
+        Task<IEnumerable<Transactions>> GetTransactionsReport(DateTime startDate, DateTime endDate);
     }
 }
