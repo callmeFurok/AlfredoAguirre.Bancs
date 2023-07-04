@@ -1,8 +1,8 @@
-﻿using AA.Bancs.Domain.Entity;
-using AA.Bancs.Domain.Interface;
-using AA.Bancs.Infraestructure.Interface;
+﻿using WSDomain.Entity;
+using WSDomain.Interface;
+using WSInfraestructure.Interface;
 
-namespace AA.Bancs.Domain.Core
+namespace WSDomain.Core
 {
     public class ClientsDomain : IClientsDomain
     {
