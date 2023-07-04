@@ -1,11 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace WSInfraestructure.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class CreateDB : Migration
+    public partial class ResetTablesDb : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -15,6 +16,7 @@ namespace WSInfraestructure.Data.Migrations
                 columns: table => new
                 {
                     AccountId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    ClientId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     AccountNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     AccountType = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     InitialBalance = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -51,7 +53,9 @@ namespace WSInfraestructure.Data.Migrations
                 columns: table => new
                 {
                     TransactionId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Date = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AccountId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    InitialBalance = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     TransactionType = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Amount = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Balance = table.Column<string>(type: "nvarchar(max)", nullable: false)

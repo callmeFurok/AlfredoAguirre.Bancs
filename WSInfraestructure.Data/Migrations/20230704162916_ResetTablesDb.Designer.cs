@@ -12,8 +12,8 @@ using WSInfraestructure.Data;
 namespace WSInfraestructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230704045433_UpdateTables")]
-    partial class UpdateTables
+    [Migration("20230704162916_ResetTablesDb")]
+    partial class ResetTablesDb
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -122,6 +122,10 @@ namespace WSInfraestructure.Data.Migrations
 
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("InitialBalance")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TransactionType")
                         .IsRequired()

@@ -33,7 +33,6 @@ namespace WSServices.WebApi.Controllers
             return BadRequest(response);
         }
 
-        // Obtener cliente por id
         [HttpGet("{clientId}")]
         [ActionName("obtenerClientePorId")]
         [ProducesResponseType(StatusCodes.Status200OK)]

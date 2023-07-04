@@ -27,6 +27,12 @@ builder.Services.AddScoped<IAccountsDomain, AccountsDomain>();
 builder.Services.AddScoped<IAccountsRepository, AccountsRepository>();
 #endregion
 
+#region Add Transactions Services
+builder.Services.AddScoped<ITransactionsApplication, TransactionsApplication>();
+builder.Services.AddScoped<ITransactionsDomain, TransactionsDomain>();
+builder.Services.AddScoped<ITransactionsRepository, TransactionsRepository>();
+#endregion
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
