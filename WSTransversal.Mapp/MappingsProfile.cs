@@ -11,6 +11,7 @@ namespace WSTransversal.Mapp
         {
             CreateMap<Clients, ClientsDto>().ReverseMap();
             CreateMap<Accounts, AccountsDto>().ReverseMap();
+            CreateMap<Transactions, TransactionsDto>().ReverseMap();
         }
     }
 }

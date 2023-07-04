@@ -1,8 +1,8 @@
 ﻿using WSDomain.Entity;
 
-namespace WSInfraestructure.Interface
+namespace WSDomain.Interface
 {
-    public interface ITransactionsRepository
+    public interface ITransactionsDomain
     {
         Task<bool> InsertAsync(Transactions transactions);
 
@@ -14,7 +14,5 @@ namespace WSInfraestructure.Interface
 
         Task<IEnumerable<Transactions>> GetAllTransactionsAsync(Guid accountId);
         Task<IEnumerable<Transactions>> GetTransactionsReport(DateTime startDate, DateTime endDate);
-        Task<bool> SaveAsync();
-
     }
 }
