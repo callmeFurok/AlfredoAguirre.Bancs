@@ -50,7 +50,7 @@ namespace WSInfraesctructure.Repository
         public async Task<bool> UpdateAsync(Accounts account)
         {
             var accountToUpdate = await GetAccountByIdAsync(account.AccountId);
-            accountToUpdate = account;
+            accountToUpdate.InitialBalance = account.InitialBalance;
 
             _applicationDbContext.Update(accountToUpdate);
 

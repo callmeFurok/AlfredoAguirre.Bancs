@@ -1,4 +1,5 @@
-﻿using WSDomain.Entity;
+﻿using Microsoft.EntityFrameworkCore;
+using WSDomain.Entity;
 using WSInfraestructure.Data;
 using WSInfraestructure.Interface;
 
@@ -11,14 +12,17 @@ namespace WSInfraesctructure.Repository
         {
             _applicationDbContext = applicationDbContext;
         }
+
         public Task<bool> DeleteAsync(Guid transactionId)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Transactions>> GetAllTransactionsAsync()
+        public async Task<IEnumerable<Transactions>> GetAllTransactionsAsync(Guid accountId)
         {
-            throw new NotImplementedException();
+            var transacctions = await _applicationDbContext.Transactions.Where(x => x.AccountId == accountId).OrderBy(x => x.Date).ToListAsync();
+
+            return transacctions;
         }
 
         public Task<Transactions> GetTransactionsByIdAsync(Guid transactionId)
@@ -31,9 +35,17 @@ namespace WSInfraesctructure.Repository
             throw new NotImplementedException();
         }
 
-        public Task<bool> InsertAsync(Transactions transactions)
+        public async Task<bool> InsertAsync(Transactions transactions)
         {
-            throw new NotImplementedException();
+            await _applicationDbContext.Transactions.AddAsync(transactions);
+            var response = await SaveAsync();
+
+            return response;
+        }
+
+        public async Task<bool> SaveAsync()
+        {
+            return await _applicationDbContext.SaveChangesAsync() > 0;
         }
 
         public Task<bool> UpdateAsync(Transactions transactions)
