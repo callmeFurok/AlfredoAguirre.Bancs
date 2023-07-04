@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\WSDomain.Interface\WSDomain.Interface.csproj" />
     <ProjectReference Include="..\WSInfraestructure.Interface\WSInfraestructure.Interface.csproj" />
+    <ProjectReference Include="..\WSTransversal.Commom\WSTransversal.Commom.csproj" />
   </ItemGroup>
 
 </Project>
