@@ -1,4 +1,4 @@
-﻿namespace AA.Bancs.Applications.DTO
+﻿namespace WSApplications.DTO
 {
     public class ClientsDto
     {
