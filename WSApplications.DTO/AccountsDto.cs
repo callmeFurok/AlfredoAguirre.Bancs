@@ -6,7 +6,7 @@
 
         public string AccountNumber { get; set; }
         public string AccountType { get; set; }
-        public string InitialBalance { get; set; }
+        public int InitialBalance { get; set; }
         public bool Status { get; set; } = true;
     }
 }
