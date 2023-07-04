@@ -1,7 +1,7 @@
 # WSPueba - Bank
 
 Prueba de desarollo para la creacion de una API que simula un banco.
-* Version 1 - Endopoint para clientes funcionando
+* Version Preliminar
 
 ## Comenzando 🚀
 ### Pre-requisitos 📋
