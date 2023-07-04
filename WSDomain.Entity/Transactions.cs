@@ -7,10 +7,11 @@ namespace WSDomain.Entity
         [Key]
         public Guid TransactionId { get; set; } = Guid.NewGuid();
         public Guid AccountId { get; set; }
+        public int InitialBalance { get; set; }
 
         public DateTime Date { get; set; } = DateTime.Now;
-        public string TransactionType { get; set; }
-        public string Amount { get; set; }
-        public string Balance { get; set; }
+        public int TransactionType { get; set; }
+        public int Amount { get; set; }
+        public int Balance { get; set; }
     }
 }
