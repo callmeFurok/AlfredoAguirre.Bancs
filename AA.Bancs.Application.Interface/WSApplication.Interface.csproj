@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AA.Bancs.Applications.DTO\WSApplication.DTO.csproj" />
+    <ProjectReference Include="..\AA.Bancs.Domain.Entity\WSDomain.Entity.csproj" />
+    <ProjectReference Include="..\AA.Bancs.Transversal.Commom\WSTransversal.Commom.csproj" />
+  </ItemGroup>
+
+</Project>

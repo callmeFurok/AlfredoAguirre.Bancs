@@ -1,7 +1,7 @@
-﻿using AA.Bancs.Applications.DTO;
-using AA.Bancs.Transversal.Commom;
+﻿using WSApplications.DTO;
+using WSTransversal.Commom;
 
-namespace AA.Bancs.Application.Interface
+namespace WSApplication.Interface
 {
     public interface IClientsApplication
     {
