@@ -1,6 +1,6 @@
-﻿using AA.Bancs.Domain.Entity;
+﻿using WSDomain.Entity;
 
-namespace AA.Bancs.Domain.Interface
+namespace WSDomain.Interface
 {
     public interface IClientsDomain
     {
