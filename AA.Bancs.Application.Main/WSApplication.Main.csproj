@@ -8,11 +8,12 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AA.Bancs.Application.Interface\AA.Bancs.Application.Interface.csproj" />
-    <ProjectReference Include="..\AA.Bancs.Domain.Interface\AA.Bancs.Domain.Interface.csproj" />
+    <ProjectReference Include="..\AA.Bancs.Application.Interface\WSApplication.Interface.csproj" />
+    <ProjectReference Include="..\AA.Bancs.Domain.Interface\WSDomain.Interface.csproj" />
   </ItemGroup>
 
 </Project>
