@@ -1,16 +1,16 @@
-﻿using AA.Bancs.Applications.DTO;
-using AA.Bancs.Domain.Entity;
-using AutoMapper;
+﻿using AutoMapper;
+using WSApplication.DTO;
+using WSApplications.DTO;
+using WSDomain.Entity;
 
-namespace AA.Bancs.Transversal.Mapp
+namespace WSTransversal.Mapp
 {
     public class MappingsProfile : Profile
     {
         public MappingsProfile()
         {
-            //mapeo de reverso
             CreateMap<Clients, ClientsDto>().ReverseMap();
-
+            CreateMap<Accounts, AccountsDto>().ReverseMap();
         }
     }
 }

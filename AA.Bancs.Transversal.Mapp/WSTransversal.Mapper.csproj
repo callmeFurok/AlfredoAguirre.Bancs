@@ -11,8 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AA.Bancs.Applications.DTO\AA.Bancs.Application.DTO.csproj" />
-    <ProjectReference Include="..\AA.Bancs.Domain.Entity\AA.Bancs.Domain.Entity.csproj" />
+    <ProjectReference Include="..\AA.Bancs.Applications.DTO\WSApplication.DTO.csproj" />
+    <ProjectReference Include="..\AA.Bancs.Domain.Entity\WSDomain.Entity.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,17 +1,19 @@
-﻿using AA.Bancs.Domain.Entity;
+﻿using WSDomain.Entity;
 
-namespace AA.Bancs.Infraestructure.Interface
+namespace WSInfraestructure.Interface
 {
     public interface IAccountsRepository
     {
-        Task<bool> InsertAsync(Accounts accounts);
+        Task<bool> InsertAsync(Accounts account);
 
-        Task<bool> UpdateAsync(Accounts accounts);
+        Task<bool> UpdateAsync(Accounts account);
 
-        Task<bool> DeleteAsync(string accountId);
+        Task<bool> DeleteAsync(Guid accountId);
 
-        Task<Accounts> GetAccountIdAsync(string accountId);
+        Task<Accounts> GetAccountByIdAsync(Guid accountId);
 
-        Task<IEnumerable<Accounts>> GetAllAccountsAsync();
+        Task<IEnumerable<Accounts>> GetAllAccountsByClientIdAsync(Guid clientId);
+
+        Task<bool> SaveAsync();
     }
 }

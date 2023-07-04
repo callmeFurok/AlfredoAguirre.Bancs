@@ -1,8 +1,8 @@
-﻿using AA.Bancs.Application.Interface;
-using AA.Bancs.Applications.DTO;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using WSApplication.Interface;
+using WSApplications.DTO;
 
-namespace AA.Bancs.Services.WebApi.Controllers
+namespace WSServices.WebApi.Controllers
 {
     [Route("api/clientes/[action]")]
     [ApiController]
@@ -33,7 +33,7 @@ namespace AA.Bancs.Services.WebApi.Controllers
             return BadRequest(response);
         }
 
-        // Obtener cliente por id 
+        // Obtener cliente por id
         [HttpGet("{clientId}")]
         [ActionName("obtenerClientePorId")]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -50,7 +50,6 @@ namespace AA.Bancs.Services.WebApi.Controllers
             return BadRequest(response);
         }
 
-        // crear cliente
         [HttpPost]
         [ActionName("crearCliente")]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -63,7 +62,6 @@ namespace AA.Bancs.Services.WebApi.Controllers
             }
 
             var response = await _clientsApplication.InsertAsync(clientsDto);
-            // validacion para verificar que las capas inferiores se realizaron correctamente
             if (response.IsSuccess)
             {
                 return Ok(response);
@@ -72,7 +70,6 @@ namespace AA.Bancs.Services.WebApi.Controllers
             return BadRequest(response);
         }
 
-        // actualizar cliente
         [HttpPut]
         [ActionName("actualizarCliente")]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -94,7 +91,6 @@ namespace AA.Bancs.Services.WebApi.Controllers
             return BadRequest(response);
         }
 
-        // eliminar cliente
         [HttpDelete("{clientId}")]
         [ActionName("eliminarCliente")]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -102,7 +98,6 @@ namespace AA.Bancs.Services.WebApi.Controllers
         public async Task<ActionResult> DeleteAsync(Guid clientId)
         {
             var response = await _clientsApplication.DeleteAsync(clientId);
-            // validacion para verificar que las capas inferiores se realizaron correctamente
             if (response.IsSuccess)
             {
                 return Ok(response);

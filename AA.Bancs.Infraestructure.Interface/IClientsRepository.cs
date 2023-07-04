@@ -1,6 +1,6 @@
-﻿using AA.Bancs.Domain.Entity;
+﻿using WSDomain.Entity;
 
-namespace AA.Bancs.Infraestructure.Interface
+namespace WSInfraestructure.Interface
 {
     public interface IClientsRepository
     {

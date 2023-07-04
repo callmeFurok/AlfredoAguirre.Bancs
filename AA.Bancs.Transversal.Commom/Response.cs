@@ -1,4 +1,4 @@
-﻿namespace AA.Bancs.Transversal.Commom
+﻿namespace WSTransversal.Commom
 {
     public class Response<T>
     {

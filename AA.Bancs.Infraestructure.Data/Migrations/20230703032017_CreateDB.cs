@@ -1,9 +1,8 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace AA.Bancs.Infraestructure.Data.Migrations
+namespace WSInfraestructure.Data.Migrations
 {
     /// <inheritdoc />
     public partial class CreateDB : Migration

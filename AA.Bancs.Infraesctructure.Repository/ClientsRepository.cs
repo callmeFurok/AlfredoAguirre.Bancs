@@ -1,9 +1,9 @@
-﻿using AA.Bancs.Domain.Entity;
-using AA.Bancs.Infraestructure.Data;
-using AA.Bancs.Infraestructure.Interface;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using WSDomain.Entity;
+using WSInfraestructure.Data;
+using WSInfraestructure.Interface;
 
-namespace AA.Bancs.Infraesctructure.Repository
+namespace WSInfraesctructure.Repository
 {
     public class ClientsRepository : IClientsRepository
     {
@@ -44,9 +44,11 @@ namespace AA.Bancs.Infraesctructure.Repository
 
         public async Task<bool> UpdateAsync(Clients clients)
         {
+            // actualizar cliente 
             var clientToUpdate = await GetClientByIdAsync(clients.ClientId);
+            clientToUpdate = clients;
 
-            clientToUpdate.Adress = clients.Adress;
+            _applicationDbContext.Update(clientToUpdate);
 
             var response = await SaveAsync();
             return response;

@@ -1,4 +1,4 @@
-﻿namespace AA.Bancs.Infraesctructure.Repository
+﻿namespace WSInfraesctructure.Repository
 {
     public class TransactionsRepository
     {

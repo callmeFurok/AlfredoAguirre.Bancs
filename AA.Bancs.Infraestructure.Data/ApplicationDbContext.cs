@@ -1,8 +1,8 @@
-﻿using AA.Bancs.Domain.Entity;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using WSDomain.Entity;
 
-namespace AA.Bancs.Infraestructure.Data
+namespace WSInfraestructure.Data
 {
     public class ApplicationDbContext : DbContext
     {

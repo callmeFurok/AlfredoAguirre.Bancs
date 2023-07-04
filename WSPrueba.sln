@@ -3,39 +3,39 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{9E3166FB-E129-497C-8F81-967DD55DBFCC}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WSApplication", "WSApplication", "{9E3166FB-E129-497C-8F81-967DD55DBFCC}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infraestructure", "Infraestructure", "{6CF5AF8A-4D76-4D9D-A3AB-3D0F3700987B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WSInfraestructure", "WSInfraestructure", "{6CF5AF8A-4D76-4D9D-A3AB-3D0F3700987B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{EE755B8C-2843-4269-9B06-0D11788A806F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WSDomain", "WSDomain", "{EE755B8C-2843-4269-9B06-0D11788A806F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{3CEAD9D3-1670-4594-A108-792F81EED6A9}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WSServices", "WSServices", "{3CEAD9D3-1670-4594-A108-792F81EED6A9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Transversal", "Transversal", "{1AC40175-7843-40C2-A88B-0248867041FE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WSTransversal", "WSTransversal", "{1AC40175-7843-40C2-A88B-0248867041FE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AA.Bancs.Infraestructure.Data", "AA.Bancs.Infraestructure.Data\AA.Bancs.Infraestructure.Data.csproj", "{77D2230A-360B-4933-8C64-7C0D135F740F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WSInfraestructure.Data", "AA.Bancs.Infraestructure.Data\WSInfraestructure.Data.csproj", "{77D2230A-360B-4933-8C64-7C0D135F740F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AA.Bancs.Domain.Entity", "AA.Bancs.Domain.Entity\AA.Bancs.Domain.Entity.csproj", "{E81DFE15-595A-4FE2-AC80-A9BB53F8419C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WSDomain.Entity", "AA.Bancs.Domain.Entity\WSDomain.Entity.csproj", "{E81DFE15-595A-4FE2-AC80-A9BB53F8419C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AA.Bancs.Infraestructure.Interface", "AA.Bancs.Infraestructure.Interface\AA.Bancs.Infraestructure.Interface.csproj", "{4766782F-320F-4072-932B-80248A893A11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WSInfraestructure.Interface", "AA.Bancs.Infraestructure.Interface\WSInfraestructure.Interface.csproj", "{4766782F-320F-4072-932B-80248A893A11}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AA.Bancs.Infraesctructure.Repository", "AA.Bancs.Infraesctructure.Repository\AA.Bancs.Infraesctructure.Repository.csproj", "{9FA923CE-8986-4D3D-9738-07E46E954730}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WSInfraesctructure.Repository", "AA.Bancs.Infraesctructure.Repository\WSInfraesctructure.Repository.csproj", "{9FA923CE-8986-4D3D-9738-07E46E954730}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AA.Bancs.Application.DTO", "AA.Bancs.Applications.DTO\AA.Bancs.Application.DTO.csproj", "{27BAC456-73B4-49B2-A763-3687821D830F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WSApplication.DTO", "AA.Bancs.Applications.DTO\WSApplication.DTO.csproj", "{27BAC456-73B4-49B2-A763-3687821D830F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AA.Bancs.Application.Interface", "AA.Bancs.Application.Interface\AA.Bancs.Application.Interface.csproj", "{F1D519BE-8B1E-425E-AA65-2D3A60452FEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WSApplication.Interface", "AA.Bancs.Application.Interface\WSApplication.Interface.csproj", "{F1D519BE-8B1E-425E-AA65-2D3A60452FEF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AA.Bancs.Application.Main", "AA.Bancs.Application.Main\AA.Bancs.Application.Main.csproj", "{975D6250-F8FE-475A-8BDE-55255A0F9BCC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WSApplication.Main", "AA.Bancs.Application.Main\WSApplication.Main.csproj", "{975D6250-F8FE-475A-8BDE-55255A0F9BCC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AA.Bancs.Transversal.Commom", "AA.Bancs.Transversal.Commom\AA.Bancs.Transversal.Commom.csproj", "{38A60F6D-610E-41B2-8BAC-2BC09ABDACD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WSTransversal.Commom", "AA.Bancs.Transversal.Commom\WSTransversal.Commom.csproj", "{38A60F6D-610E-41B2-8BAC-2BC09ABDACD5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AA.Bancs.Domain.Core", "AA.Bancs.Domain.Core\AA.Bancs.Domain.Core.csproj", "{D03CABD9-159B-454A-9B12-088E042371A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WSDomain.Core", "AA.Bancs.Domain.Core\WSDomain.Core.csproj", "{D03CABD9-159B-454A-9B12-088E042371A9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AA.Bancs.Domain.Interface", "AA.Bancs.Domain.Interface\AA.Bancs.Domain.Interface.csproj", "{5BE4CC7B-3523-42B4-A626-D52941BC5D3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WSDomain.Interface", "AA.Bancs.Domain.Interface\WSDomain.Interface.csproj", "{5BE4CC7B-3523-42B4-A626-D52941BC5D3E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AA.Bancs.Services.WebApi", "AA.Bancs.Services.WebApi\AA.Bancs.Services.WebApi.csproj", "{5895592E-ED4F-4363-A648-D9FB6C5B05D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WSServices.WebApi", "AA.Bancs.Services.WebApi\WSServices.WebApi.csproj", "{5895592E-ED4F-4363-A648-D9FB6C5B05D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AA.Bancs.Transversal.Mapper", "AA.Bancs.Transversal.Mapp\AA.Bancs.Transversal.Mapper.csproj", "{842DE79D-6D25-48C2-AB8E-39AB65A36F02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WSTransversal.Mapper", "AA.Bancs.Transversal.Mapp\WSTransversal.Mapper.csproj", "{842DE79D-6D25-48C2-AB8E-39AB65A36F02}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
