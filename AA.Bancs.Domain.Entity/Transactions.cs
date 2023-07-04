@@ -1,13 +1,14 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace AA.Bancs.Domain.Entity
+namespace WSDomain.Entity
 {
     public class Transactions
     {
         [Key]
         public Guid TransactionId { get; set; } = Guid.NewGuid();
+        public Guid AccountId { get; set; }
 
-        public string Date { get; set; } = DateTime.Now.ToString("dd/MM/yyyy");
+        public DateTime Date { get; set; } = DateTime.Now;
         public string TransactionType { get; set; }
         public string Amount { get; set; }
         public string Balance { get; set; }

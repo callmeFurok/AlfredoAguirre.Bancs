@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace AA.Bancs.Domain.Entity
+namespace WSDomain.Entity
 {
     public class Clients : Persons
     {

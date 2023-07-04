@@ -1,11 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace AA.Bancs.Domain.Entity
+namespace WSDomain.Entity
 {
     public class Accounts
     {
         [Key]
         public Guid AccountId { get; set; } = Guid.NewGuid();
+        public Guid ClientId { get; set; }
 
         public string AccountNumber { get; set; }
         public string AccountType { get; set; }

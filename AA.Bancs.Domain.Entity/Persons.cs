@@ -1,4 +1,4 @@
-﻿namespace AA.Bancs.Domain.Entity
+﻿namespace WSDomain.Entity
 {
     public class Persons
     {
