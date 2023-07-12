@@ -15,6 +15,6 @@ namespace WSApplication.Interface
         Task<Response<Transactions>> GetTransactionsByIdAsync(Guid transactionId);
 
         Task<Response<IEnumerable<Transactions>>> GetAllTransactionsAsync(Guid accountId);
-        Task<Response<IEnumerable<Transactions>>> GetTransactionsReport(DateTime startDate, DateTime endDate);
+        Task<Response<IEnumerable<Transactions>>> GetTransactionsReportAsync(Guid accountId, DateTime startDate, DateTime endDate);
     }
 }

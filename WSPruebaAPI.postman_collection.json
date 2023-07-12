@@ -1,0 +1,332 @@
+{
+	"info": {
+		"_postman_id": "b7232940-7e49-4006-8105-c0177fd1c1de",
+		"name": "WSPruebaAPI",
+		"description": "# WSPrueba\nConsultas de ejemplo para la API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "Crear Cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Marianela Montalvo\",\r\n  \"gender\": \"Femenino\",\r\n  \"age\": \"45\",\r\n  \"identificationCard\": \"1715181122\",\r\n  \"adress\": \"Amazonas y  NNUU\",\r\n  \"phone\": \"097548965\",\r\n  \"userName\": \"mamontalv\",\r\n  \"password\": \"5678\",\r\n  \"status\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5017/api/clientes/crearCliente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5017",
+							"path": [
+								"api",
+								"clientes",
+								"crearCliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar todos los clientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5017/api/clientes/obtenerClientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5017",
+							"path": [
+								"api",
+								"clientes",
+								"obtenerClientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar Cliente por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5017/api/clientes/obtenerClientePorId/4a7243e0-4056-4925-2bfb-08db7cbf3da4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5017",
+							"path": [
+								"api",
+								"clientes",
+								"obtenerClientePorId",
+								"4a7243e0-4056-4925-2bfb-08db7cbf3da4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Cliente por ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"clientId\": \"66bf17b7-c2cf-4120-2bfc-08db7cbf3da4\",\r\n  \"name\": \"Juan Estrada\",\r\n  \"gender\": \"string\",\r\n  \"age\": \"string\",\r\n  \"identificationCard\": \"string\",\r\n  \"adress\": \"string\",\r\n  \"phone\": \"string\",\r\n  \"userName\": \"string\",\r\n  \"password\": \"string\",\r\n  \"status\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5017/api/clientes/actualizarCliente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5017",
+							"path": [
+								"api",
+								"clientes",
+								"actualizarCliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Cliente por ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5017/api/clientes/eliminarCliente/66bf17b7-c2cf-4120-2bfc-08db7cbf3da4\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5017",
+							"path": [
+								"api",
+								"clientes",
+								"eliminarCliente",
+								"66bf17b7-c2cf-4120-2bfc-08db7cbf3da4\n"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "# CRUD Clientes"
+		},
+		{
+			"name": "Cuentas",
+			"item": [
+				{
+					"name": "Crear Cuenta usando el ID del cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"clientId\": \"950e6dbe-7718-4852-2bfa-08db7cbf3da4\",\r\n  \"accountNumber\": \"585545\",\r\n  \"accountType\": \"Corriente\",\r\n  \"initialBalance\": 1000,\r\n  \"status\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5017/api/cuentas/crearCuenta",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5017",
+							"path": [
+								"api",
+								"cuentas",
+								"crearCuenta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar todas las cuentas por cliente ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5017/api/cuentas/obtenerTodasLasCuentasPorIdCliente?clientId=950e6dbe-7718-4852-2bfa-08db7cbf3da4\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5017",
+							"path": [
+								"api",
+								"cuentas",
+								"obtenerTodasLasCuentasPorIdCliente"
+							],
+							"query": [
+								{
+									"key": "clientId",
+									"value": "950e6dbe-7718-4852-2bfa-08db7cbf3da4\n"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar cuenta por ID de cuenta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5017/api/cuentas/obtenerCuentaPorId?accountId=8ffbb761-e689-4364-9e82-0e00cea6e1c4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5017",
+							"path": [
+								"api",
+								"cuentas",
+								"obtenerCuentaPorId"
+							],
+							"query": [
+								{
+									"key": "accountId",
+									"value": "8ffbb761-e689-4364-9e82-0e00cea6e1c4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Cuenta por ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5017/api/cuentas/actualizarCuenta",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5017",
+							"path": [
+								"api",
+								"cuentas",
+								"actualizarCuenta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar cuenta por ID de cuenta",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5017/api/cuentas/eliminarCuenta/8ffbb761-e689-4364-9e82-0e00cea6e1c4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5017",
+							"path": [
+								"api",
+								"cuentas",
+								"eliminarCuenta",
+								"8ffbb761-e689-4364-9e82-0e00cea6e1c4"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "# CRUD Cuentas"
+		},
+		{
+			"name": "Movimientos",
+			"item": [
+				{
+					"name": "Crear movimiento por ID de cuenta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"accountId\": \"d0b0f901-ba75-4e3f-8185-a587351dfc0e\",\r\n  \"transactionType\": 2,\r\n  \"amount\": 50\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5017/api/movimientos/crearMovimiento",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5017",
+							"path": [
+								"api",
+								"movimientos",
+								"crearMovimiento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar movimientos por ID de cuenta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5017/api/movimientos/obtenerMovimientosPorCuentaId/d0b0f901-ba75-4e3f-8185-a587351dfc0e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5017",
+							"path": [
+								"api",
+								"movimientos",
+								"obtenerMovimientosPorCuentaId",
+								"d0b0f901-ba75-4e3f-8185-a587351dfc0e"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "# CRUD Movimientos"
+		}
+	]
+}

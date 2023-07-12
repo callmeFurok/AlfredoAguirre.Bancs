@@ -13,6 +13,6 @@ namespace WSDomain.Interface
         Task<Transactions> GetTransactionsByIdAsync(Guid transactionId);
 
         Task<IEnumerable<Transactions>> GetAllTransactionsAsync(Guid accountId);
-        Task<IEnumerable<Transactions>> GetTransactionsReport(DateTime startDate, DateTime endDate);
+        Task<IEnumerable<Transactions>> GetTransactionsReportAsync(Guid accountId, DateTime startDate, DateTime endDate);
     }
 }

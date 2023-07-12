@@ -19,9 +19,9 @@ namespace WSDomain.Core
             _transactionsRepository = transactionsRepository;
             _accountsDomain = accountsDomain;
         }
-        public Task<bool> DeleteAsync(Guid transactionId)
+        public async Task<bool> DeleteAsync(Guid transactionId)
         {
-            throw new NotImplementedException();
+            return await _transactionsRepository.DeleteAsync(transactionId);
         }
 
         public async Task<IEnumerable<Transactions>> GetAllTransactionsAsync(Guid accountId)
@@ -29,14 +29,15 @@ namespace WSDomain.Core
             return await _transactionsRepository.GetAllTransactionsAsync(accountId);
         }
 
-        public Task<Transactions> GetTransactionsByIdAsync(Guid transactionId)
+        public async Task<Transactions> GetTransactionsByIdAsync(Guid transactionId)
         {
-            throw new NotImplementedException();
+            return await _transactionsRepository.GetTransactionsByIdAsync(transactionId);
         }
 
-        public Task<IEnumerable<Transactions>> GetTransactionsReport(DateTime startDate, DateTime endDate)
+        public async Task<IEnumerable<Transactions>> GetTransactionsReportAsync(Guid accountId, DateTime startDate, DateTime endDate)
         {
-            throw new NotImplementedException();
+            var transactions = await _transactionsRepository.GetTransactionsReportAsync(accountId, startDate, endDate);
+            return transactions;
         }
 
         public async Task<bool> InsertAsync(Transactions transactions)
@@ -60,13 +61,12 @@ namespace WSDomain.Core
             await _accountsDomain.UpdateAsync(account);
 
             return await _transactionsRepository.InsertAsync(transactions);
-            // crea una transaccion dependiendo si es credito suma el initialbalance mas el amount en el campo balance
 
         }
 
-        public Task<bool> UpdateAsync(Transactions transactions)
+        public async Task<bool> UpdateAsync(Transactions transactions)
         {
-            throw new NotImplementedException();
+            return await _transactionsRepository.UpdateAsync(transactions);
         }
     }
 }

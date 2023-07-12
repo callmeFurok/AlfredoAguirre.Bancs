@@ -13,9 +13,12 @@ namespace WSInfraesctructure.Repository
             _applicationDbContext = applicationDbContext;
         }
 
-        public Task<bool> DeleteAsync(Guid transactionId)
+        public async Task<bool> DeleteAsync(Guid transactionId)
         {
-            throw new NotImplementedException();
+            await _applicationDbContext.Transactions.FirstOrDefaultAsync(x => x.TransactionId == transactionId);
+            var response = await SaveAsync();
+            return response;
+
         }
 
         public async Task<IEnumerable<Transactions>> GetAllTransactionsAsync(Guid accountId)
@@ -25,14 +28,17 @@ namespace WSInfraesctructure.Repository
             return transacctions;
         }
 
-        public Task<Transactions> GetTransactionsByIdAsync(Guid transactionId)
+        public async Task<Transactions> GetTransactionsByIdAsync(Guid transactionId)
         {
-            throw new NotImplementedException();
+            var transaction = await _applicationDbContext.Transactions.FirstOrDefaultAsync(x => x.TransactionId == transactionId);
+
+            return transaction;
         }
 
-        public Task<IEnumerable<Transactions>> GetTransactionsReport(DateTime startDate, DateTime endDate)
+        public async Task<IEnumerable<Transactions>> GetTransactionsReportAsync(Guid accountId, DateTime startDate, DateTime endDate)
         {
-            throw new NotImplementedException();
+            var transacctionsReport = await _applicationDbContext.Transactions.Where(x => x.AccountId == accountId && x.Date >= startDate && x.Date <= endDate).OrderBy(x => x.Date).ToListAsync();
+            return transacctionsReport;
         }
 
         public async Task<bool> InsertAsync(Transactions transactions)
@@ -43,14 +49,16 @@ namespace WSInfraesctructure.Repository
             return response;
         }
 
+        public async Task<bool> UpdateAsync(Transactions transactions)
+        {
+            _applicationDbContext.Transactions.Update(transactions);
+            var respose = await SaveAsync();
+            return respose;
+        }
         public async Task<bool> SaveAsync()
         {
             return await _applicationDbContext.SaveChangesAsync() > 0;
         }
 
-        public Task<bool> UpdateAsync(Transactions transactions)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

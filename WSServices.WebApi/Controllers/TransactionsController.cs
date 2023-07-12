@@ -16,6 +16,21 @@ namespace WSServices.WebApi.Controllers
             _transactionsApplication = transactionsApplication;
         }
 
+        // get transactions report by account id and start date and end date
+        [HttpGet("{accountId}/{startDate}/{endDate}")]
+        [ActionName("obtenerReporteMovimientos")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult> GetTransactionsReportAsync(Guid accountId, DateTime startDate, DateTime endDate)
+        {
+            var response = await _transactionsApplication.GetTransactionsReportAsync(accountId, startDate, endDate);
+            if (response.IsSuccess)
+            {
+                return Ok(response);
+            }
+
+            return BadRequest(response);
+        }
 
         [HttpPost]
         [ActionName("crearMovimiento")]

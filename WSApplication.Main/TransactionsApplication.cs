@@ -19,9 +19,26 @@ namespace WSApplication.Main
             _accountsApplication = accountsApplication;
             _mapper = mapper;
         }
-        public Task<Response<bool>> DeleteAsync(Guid transactionId)
+        public async Task<Response<bool>> DeleteAsync(Guid transactionId)
         {
-            throw new NotImplementedException();
+            var response = new Response<bool>();
+            try
+            {
+                response.Data = _transactionsDomain.DeleteAsync(transactionId).Result;
+
+                if (response.Data)
+                {
+                    response.IsSuccess = true;
+                    response.Message = "Se elimino correctamente la transaccion";
+                }
+            }
+            catch (Exception e)
+            {
+
+                response.Message = e.Message;
+            }
+
+            return response;
         }
 
         public async Task<Response<IEnumerable<Transactions>>> GetAllTransactionsAsync(Guid accountId)
@@ -45,17 +62,56 @@ namespace WSApplication.Main
 
                 response.Message = e.Message;
             }
+
             return response;
         }
 
-        public Task<Response<Transactions>> GetTransactionsByIdAsync(Guid transactionId)
+        public async Task<Response<Transactions>> GetTransactionsByIdAsync(Guid transactionId)
         {
-            throw new NotImplementedException();
+            var response = new Response<Transactions>();
+            try
+            {
+                var transactions = await _transactionsDomain.GetTransactionsByIdAsync(transactionId);
+
+                response.Data = transactions;
+
+                if (response.Data != null)
+                {
+                    response.IsSuccess = true;
+                    response.Message = "Consulta exitosa de las transacciones por cuenta";
+                }
+
+            }
+            catch (Exception e)
+            {
+
+                response.Message = e.Message;
+            }
+
+            return response;
         }
 
-        public Task<Response<IEnumerable<Transactions>>> GetTransactionsReport(DateTime startDate, DateTime endDate)
+        public async Task<Response<IEnumerable<Transactions>>> GetTransactionsReportAsync(Guid accountId, DateTime startDate, DateTime endDate)
         {
-            throw new NotImplementedException();
+            var respose = new Response<IEnumerable<Transactions>>();
+            try
+            {
+                var transactions = await _transactionsDomain.GetTransactionsReportAsync(accountId, startDate, endDate);
+
+                respose.Data = transactions;
+
+                if (respose.Data != null)
+                {
+                    respose.IsSuccess = true;
+                    respose.Message = "Consulta exitosa de las transacciones por cuenta";
+                }
+            }
+            catch (Exception e)
+            {
+                respose.Message = e.Message;
+            }
+
+            return respose;
         }
 
         public async Task<Response<bool>> InsertAsync(TransactionsDto transactionsDto)
@@ -83,9 +139,28 @@ namespace WSApplication.Main
             return response;
         }
 
-        public Task<Response<bool>> UpdateAsync(TransactionsDto transactionsDto)
+        public async Task<Response<bool>> UpdateAsync(TransactionsDto transactionsDto)
         {
-            throw new NotImplementedException();
+            var response = new Response<bool>();
+            try
+            {
+                var transacctionMap = _mapper.Map<Transactions>(transactionsDto);
+                var accountInitialBalance = await _accountsApplication.GetAccountByIdAsync(transacctionMap.AccountId);
+
+                transacctionMap.InitialBalance = accountInitialBalance.Data.InitialBalance;
+
+                response.Data = await _transactionsDomain.UpdateAsync(transacctionMap);
+                if (response.Data)
+                {
+                    response.IsSuccess = true;
+                    response.Message = "Actualizacion Exitosa";
+                }
+            }
+            catch (Exception e)
+            {
+                response.Message = e.Message;
+            }
+            return response;
         }
     }
 }
