@@ -16,7 +16,35 @@ namespace WSServices.WebApi.Controllers
             _transactionsApplication = transactionsApplication;
         }
 
-        // get transactions report by account id and start date and end date
+        [HttpGet("{accountId}")]
+        [ActionName("obtenerMovimientosPorCuentaId")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult> GetAllTransactionsAsync(Guid accountId)
+        {
+            var response = await _transactionsApplication.GetAllTransactionsAsync(accountId);
+            if (response.IsSuccess)
+            {
+                return Ok(response);
+            }
+
+            return BadRequest(response);
+        }
+        [HttpGet("{transactionId}")]
+        [ActionName("obtenerMovimientoPorId")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult> GetTransactionsByIdAsync(Guid transactionId)
+        {
+            var response = await _transactionsApplication.GetTransactionsByIdAsync(transactionId);
+            if (response.IsSuccess)
+            {
+                return Ok(response);
+            }
+
+            return BadRequest(response);
+        }
+
         [HttpGet("{accountId}/{startDate}/{endDate}")]
         [ActionName("obtenerReporteMovimientos")]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -52,14 +80,18 @@ namespace WSServices.WebApi.Controllers
             return BadRequest(response);
         }
 
-
-        [HttpGet("{accountId}")]
-        [ActionName("obtenerMovimientosPorCuentaId")]
+        [HttpPut]
+        [ActionName("actualizarMovimiento")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult> GetClientByIdAsync(Guid accountId)
+        public async Task<ActionResult> UpdateAsync([FromBody] TransactionsDto transactionsDto)
         {
-            var response = await _transactionsApplication.GetAllTransactionsAsync(accountId);
+            if (transactionsDto == null)
+            {
+                return BadRequest();
+            }
+
+            var response = await _transactionsApplication.UpdateAsync(transactionsDto);
             if (response.IsSuccess)
             {
                 return Ok(response);
@@ -68,6 +100,19 @@ namespace WSServices.WebApi.Controllers
             return BadRequest(response);
         }
 
+        [HttpDelete("{transactionId}")]
+        [ActionName("eliminarMovimiento")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult> DeleteAsync(Guid transactionId)
+        {
+            var response = await _transactionsApplication.DeleteAsync(transactionId);
+            if (response.IsSuccess)
+            {
+                return Ok(response);
+            }
 
+            return BadRequest(response);
+        }
     }
 }
